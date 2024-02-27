@@ -26,4 +26,15 @@ def main():
     user.email = "scott_chief@mars.org"
     db_sess = session.create_session()
     db_sess.add(user)
+    job = Jobs()
+    job.team_leader = 1
+    job.job = "deployment of residential modules 1 and 2"
+    job.age = 21
+    job.work_size = 15
+    job.collaborators = "2, 3"
+    job.start_date = datetime.now()
+    job.is_finished = False
+    db_sess = session.create_session()
+    db_sess.add(job)
     db_sess.commit()
+
